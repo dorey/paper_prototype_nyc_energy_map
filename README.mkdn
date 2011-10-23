@@ -1,0 +1,8 @@
+COMS W4170
+============
+
+Assignment 1
+------------
+
+* [View the demo](http://dorey.github.com/ald2175_hw1/)
+* [Download the zip](https://github.com/dorey/ald2175_hw1/zipball/master)

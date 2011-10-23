@@ -1,0 +1,14 @@
+"Page","Task","Action","Note"
+,,,"Arrives at home page"
+"Home","search for building","Sees address box",
+"Home","search for building","Types in his building address",
+"Home","search for building","submits form",
+"Search results","reviews search results","Sees “address is found”",
+"Search results","reviews search results","Zooms in on his tax lot",
+"Tax Lot Level Info Display","accesses relevant info","Reads pop up with information",
+"Tax Lot Level Info Display","accesses relevant info","Reads that the calculation is based on entire tax lot",
+,,,"Ralph wants to know just his portion of usage"
+"Tax Lot Level Info Display","enters additional info","Clicks to calculate for his square footage",
+"Square Footage Entry","enters additional info","Enters his square footage",
+"Square Footage Entry","enters additional info","Submits his square footage",
+"Tax Lot Level Info Display","views calculated info","Sees custom calculated data",

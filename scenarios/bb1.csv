@@ -1,0 +1,12 @@
+"Page","Task","Action","Note"
+,,,"Arrives at home page"
+"Home","search for building","Sees address box",
+"Home","search for building","Types in his building address",
+"Home","search for building","submits form",
+"Search results","reviews search results","Sees “address is found”",
+"Search results",,"Zooms in on his tax lot",
+"Tax Lot Level Info Display","accesses relevant info","Reads pop up with information",
+,,,"Has the option to enter parameters"
+"Tax Lot Level Info Display","accesses relevant info","Bobby does not enter additional parameters",
+"Tax Lot Level Info Display","accesses relevant info","Bobby prints the page",
+,,,"Done"

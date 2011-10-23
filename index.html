@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>COMS W4170: Assignment 2 [Paper Prototype]</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="libs/bootstrap.min.css" rel="stylesheet">
+	<script src="libs/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/underscore.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/jquery.mustache.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/url-params.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/debug.js" type="text/javascript" charset="utf-8"></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="page-header">
+		  <h1>
+			NYC Energy Map <small>Paper Prototype</small>
+		  </h1>
+        </div>
+		<div class="row">
+			<div class="span4">
+				<h3>
+					<small>
+						Personas and Scenarios:
+					</small>
+				</h3>
+			</div>
+			<div class="span10">
+				<h3>
+					Name: Bobby BuildingOwner
+				</h3>
+				<p>
+					Bobby owns a building in NYC. He wants to look up information about his building's heating and power usage.
+				</p>
+				<p>
+					<a href="#sc1">View Scenario &raquo;</a>
+				</p>
+				<hr>
+				<h3>
+					Name: Ralph Renter
+				</h3>
+				<p>
+					Ralph rents a medium-sized apartment in NYC. He wants to see data relevant to him. He knows that his apartment is 1000 square feet.
+				</p>
+				<p>
+					He wants to print up his data and put it on his fridge.
+				</p>
+				<p>
+					<a href="#sc2">View Scenario &raquo;</a>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span14"><hr></div>
+		</div>
+		<div class="row" id="sc1">
+			<div class="span4">
+				<h4>
+					Scenario 1:
+				</h4>
+				<p>
+					Bobby owns a building in NYC. He wants to look up information about his building's heating and power usage.
+				</p>
+			</div>
+			<div class="span10">
+				<div class="scenario-table" data-scenario-csv="scenarios/bb1.csv"></div>
+			</div>
+			<div class="row">
+				<div class="span10 offset4">
+					<h4>
+						Images:
+					</h4>
+					<div class="scenario-images" data-scenario-images="bb1.json"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<p class="span4 offset4"><a href="#top">Back to Top</a></p>
+		</div>
+		<div class="row">
+			<div class="span14"><hr></div>
+		</div>
+		<div class="row" id="sc2">
+			<div class="span4">
+				<h4>
+					Scenario 2:
+				</h4>
+				<p>
+					Ralph rents a medium-sized apartment in NYC. He wants to see data relevant to him. He knows that his apartment is 1000 square feet.
+				</p>
+				<p>
+					He wants to print up his data and put it on his fridge.
+				</p>
+			</div>
+			<div class="span10">
+				<div class="scenario-table" data-scenario-csv="scenarios/rr1.csv"></div>
+			</div>
+			<div class="row">
+				<div class="span10 offset4">
+					<h4>
+						Images:
+					</h4>
+					<div class="scenario-images" data-scenario-images="rr1.json"></div>
+				</div>
+			</div>
+			<div class="row">
+				<p class="span4 offset4"><a href="#top">Back to Top</a></p>
+			</div>
+		</div>
+    </div>
+	<script src="pp.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.scenario-table table, .scenario-table table th {
+    border: 0 none;
+    padding: 0;
+}
+.scenario-table table td {
+    border: 1px solid #eee;
+    border-width: 0 0 1px 0;
+    padding: 2px 0;
+}
+.scenario-table table td.sc-row-count {
+    font-weight: bold;
+    color: #aaa;
+    font-size: smaller;
+    padding-right: 10px;
+}
+.scenario-table table td.repeat {
+    color: #aaa;
+    font-size: smaller;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>assignment</title>
+</head>
+<body>
+<div>
+	<h2 style="margin: 0.0px 0.0px 19.0px 0.0px; font: 24.0px Arial"><b>Assignment 1: Flash Forward</b></h2>
+	<div id="intro">
+		<p class="p4">Your first assignment has three parts, intended to help you get familiar with CogTool v1.1.5 and Flash Builder 4.5 (which, from this point on, we will refer to simply as CogTool and Flash Builder), and some of the concepts that we have covered in class:</p>
+		<ul class="ul1">
+		  <li class="li5">Perform a heuristic usability analysis of a portion of Flash Builder.</li>
+		  <li class="li5">Use CogTool to perform a KLM analysis of two ways to accomplish the same goal in Flash Builder.</li>
+		  <li class="li5">Use Flash Builder to implement a simple application.</li>
+		</ul>
+	</div>
+	<div id="part1">
+		<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; font: 18.0px Arial"><b>Part 1: Heuristic Analysis (40%)</b></h3>
+		<p class="p4">The first part of your assignment is to perform a usability analysis of the <a href="http://help.adobe.com/en_US/flashbuilder/using/WS65aa2914f20a58eb46e4417112119b3940b-8000.html"><span class="s2">Flash Builder Debug perspective</span></a>, using Nielsen's usability heuristics (<a href="http://www.useit.com/papers/heuristic/heuristic_list.html"><span class="s2">J. Nielsen, Ten Usability Heuristics</span></a>). Any of the functionality supported in the Debug perspective is fair game.</p>
+		<p class="p4">In doing this part of the assignment, please follow the approach described at <a href="http://www.useit.com/papers/heuristic/heuristic_evaluation.html"><span class="s2">http://www.useit.com/papers/heuristic/heuristic_evaluation.html</span></a>, but with a<i> single</i>evaluator—you! You should begin by trying to identify at least four specific problems caused by the Debug perspective not satisfying the usability heuristics.  For each of your four (or more) problems, (a) describe it, (b) explain how it does not meet one or more of the heuristics, and (c) rate the problem's severity, using the 0–4 scale explained at <a href="http://www.useit.com/papers/heuristic/severityrating.html"><span class="s2">http://www.useit.com/papers/heuristic/severityrating.html</span></a>. </p>
+		<p class="p4">Next, for each of Nielsen's ten usability heuristics, discuss how well the Debug perspective meets that criterion.  Here, you should refer back to the specific problems you identified earlier, when appropriate, but you can also mention any other problems you might find. Please write one or two paragraphs for each of the ten usability heuristics.  In discussing each heuristic, you are also welcome (but <i>not</i> required) to address some of the issues discussed in Shneiderman and Plaisant, Chapter 4; for example, you could consider some of the questions in the questionnaires it discusses. (If you decide to do this, you can get a free look at an older version of the QUIS in <a href="http://hcil.cs.umd.edu/trs/87-11/87-11.pdf"><span class="s2">http://hcil.cs.umd.edu/trs/87-11/87-11.pdf</span></a>.).</p>
+		<p class="p4">Please feel free to include screenshots along with your text. Your discussions of at least four usability problems with Debug perspective and your analyses of how well the Debug perspective satisfies each heuristic, should together take about three pages of text (not counting screenshots).</p>
+		<p class="p4">Do not forget to consider the Flash Debug perspective in the context of other applications you have used and the normative UI standards set by the OS on which you run the application (heuristic #4). That is to say, do not simply consider the Debug Perspective (or, even Flash Builder) as an isolated artifact.</p>
+		</div>
+		<div id="part2">
+		<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; font: 18.0px Arial"><b>Part 2: Keystroke-Level Model Analysis (20%)</b></h3>
+		<p class="p4">In the second part of your assignment, you will use CogTool to mock up and explore the estimated performance of two different ways (differing in the actions that the user performs) of magnifying in the Flash Builder Design View.  You should assume that each starts from the same initial conditions in which the Design View is already visible, and magnifies by the same amount.</p>
+		<p class="p4">To get up to speed with CogTool, you should get acquainted with its <a href="http://cogtool.hcii.cs.cmu.edu/use-today/documentation-and-other-support"><span class="s2">documentation</span></a>, including reading through the <a href="http://cogtool.hcii.cs.cmu.edu/sites/default/files/CogToolUserGuide_1_1.pdf"><span class="s2">CogTool User Guide</span></a>, and trying out the<a href="http://cogtool.hcii.cs.cmu.edu/use-today/other_materials/step-step-tutorial"><span class="s2">Step-by-Step Tutorial</span></a>. For this part of the assignment, you should create a CogTool Project containing a single storyboard "Design" that uses background screen images that you have grabbed from Flash Builder itself (using the screen capture facilities in your operating system), and the necessary Standard Widgets and Transitions created with CogTool, as we demoed in class. Each of the two ways to magnify should be encoded as a separate Task in that Design, with a Script that accomplishes it. Please lay out the Frames in your Design to make it easy for you (and us) to understand how they are connected.</p>
+		<p class="p4">After using CogTool to compute the predicted step-by-step timing for each of the two Tasks, please write a short (one paragraph) comparative analysis of the computed predictions, based on the class notes and the Flash Builder documentation.</p>
+	</div>
+	<div id="part3">
+		<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; font: 18.0px Arial"><b>Part 3: Meetup Minder (40%)</b></h3>
+		<p class="p5">The purpose of the third part of the assignment is to get you up to speed with Flex and Flash Builder 4.5 by creating a simple web-based UI for <a href="http://www.meetup.com/"><span class="s2">Meetup</span></a>. Meetup supports the administration of local meetings ("meetups") of folks interested in specific topics. You will be designing and implementing the user interface for a web application that returns information about meetups near a given location, along with pictures (when available) for each of those meetups.  To accomplish this, you will be using the <a href="http://www.meetup.com/meetup_api"><span class="s2">Meetup API</span></a>, which will provide you with everything you need.</p>
+		<p class="p4">Your user should be able to specify the zip code, a distance from the zip code, and some indication of the topic of interest.  Your application should return a set of meetups, which you are welcome (but not required) to cap at 10, and information that you think would be interesting to someone searching for meetups, using a format and layout of your own choosing. In addition, you should use the Meetup API to retrieve and display photos relevant to the meetups you display. For each meetup you display, there should be some way for the user to request additional details for the meetup and browse through its pictures. It's your choice as to whether picture browsing is done under user control or system control.</p>
+		<p class="p4">The description for part 3 is intentionally high level. Your design should take into account the usability issues and heuristics discussed in class and in your readings thus far, and will be evaluated in that context, while factoring in the limitations that we have built into the specification to make this assignment more manageable. A full-featured meetup search application would have much more functionality than the version described here, but we're asking you to keep it simple!</p>
+		<p class="p4">Please note that your grade for part 3 will be based in part on your analysis of the design decisions that you made (included in your submission, as described below).</p>
+	</div>
+	<div id="extro">
+		<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; font: 18.0px Arial"><b>Submission</b></h3>
+		<p class="p4">Please put the heuristic analysis of part 1 and your one-paragraph comparative analysis of part 2 into a single document, with each part clearly labeled.  The document should include any screenshots for part 1. (You're also welcome to include screenshots for part 2 if you think they would be helpful.) When referencing a screenshot, please specify clearly in your discussion the image to which you are referring (numbering your figures is a good way to do that). If your CogTool Project file has more than a single Design with two Tasks, please clarify by name, in your paragraph, which Design and Tasks we should be looking at. The preferred method of submission is as a .pdf file; however, a Word .doc[x] file (as a last resort) will also be accepted.</p>
+		<p class="p4">For part 2 of the assignment, submit the CogTool project file (*.cgt).</p>
+		<p class="p4">For part 3, first make sure that you include in the <b>src folder</b> of your project a README file that contains (a) your name, UNI, and email address, (b) an explanation of any special instructions for running your program, and (c) a paragraph justifying your user interface design decisions, and, optionally (d) a description of any optional functionality you have implemented beyond that required for the assignment. </p>
+		<p class="p4">Then create a .zip file containing your <i>entire Flash Builder project</i> by following these steps:                                                 </p>
+		<p class="p6">1.<span class="s3">      </span><span class="s4">Select (click) the Project root in the Flash Navigator</span></p>
+		<p class="p6">2.<span class="s3">      </span><span class="s4">Select Files</span><span class="s5">à</span>Export</p>
+		<p class="p6">3.<span class="s3">      </span><span class="s4">Click on “General”, “Archive File”, and then click Next</span></p>
+		<p class="p6">4.<span class="s3">      </span><span class="s4">Ensure your <i>Project root and all subfolders</i> are checked (e.g., settings, bin-debug, bin-release, html-template, libs, src, and any other folders you added). Burrow down into subdirectories to ensure everything is included.</span></p>
+		<p class="p6">5.<span class="s3">      </span><span class="s4">Choose/type a location and file name for the archive.</span></p>
+		<p class="p6">6.<span class="s3">      </span><span class="s4">Ensure the “Create directory structure for files” and “Save in zip format” options are checked.</span></p>
+		<p class="p6">7.<span class="s3">      </span><span class="s4">Click on “Finish”.</span></p>
+		<p class="p5"> </p>
+		<p class="p5">Next, just to make sure you've done this right, move your .zip file to a temp directory, unzip the file, and check whether everything is there.</p>
+		<p class="p4">Now you're ready to submit: Zip together into a single .zip submission file named "youruni_hw1.zip" (where, "youruni" is your Columbia UNI) the following three items:</p>
+		<ol class="ol1">
+		  <li class="li5">your analysis document,</li>
+		  <li class="li5">your .cgt file, and</li>
+		  <li class="li5">your .zip file for part 3</li>
+		</ol>
+		<p class="p4">Just to make sure you've done this right, move your .zip file to a temp directory, unzip the file, and check whether everything is there.  Then, upload your .zip file in CourseWorks to the <b>Class Files→Shared Files→Homework 1</b> folder.  And, you're done!</p>
+		<p class="p4"><b>Note:</b> If you wish to resubmit before the deadline, you can do that. (CourseWorks will not clobber your original submission(s), even though your later submission(s) have the same name.  Submissions are time-stamped by CourseWorks, and we will grade your latest on-time submission.)</p>
+		<h3 style="margin: 0.0px 0.0px 18.0px 0.0px; font: 18.0px Arial"><b>Hints</b></h3>
+		<p class="p4">Note that you will need to obtain a (free) key to access the meetup API, and the number of requests per hour and results per request are limited.</p>
+	</div>
+</div>
+</body>
+</html>
