@@ -17,3 +17,13 @@
     color: #aaa;
     font-size: smaller;
 }
+div.sc-pages-notes ul li {
+    padding-bottom: 15px;
+}
+div.sc-pages-notes ul li p {
+    margin: 0;
+}
+div.sc-pages-notes ul li p.notes {
+    font-style: italic;
+    margin-left: 1em;
+}
