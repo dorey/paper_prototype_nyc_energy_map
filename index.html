@@ -24,197 +24,99 @@
 			NYC Energy Map <small>Paper Prototype</small>
 		  </h1>
         </div>
-		<div class="row">
-			<div class="span4">
-				<h3>
-					<small>
-						Personas and Scenarios:
-					</small>
-				</h3>
-			</div>
-			<div class="span10">
-				<h3>
-					Name: Bobby BuildingOwner
-				</h3>
-				<p>
-					Bobby owns a building in NYC. He wants to look up information about his building's heating and power usage.
-				</p>
-				<p>
-					<a href="#sc1">View Scenario &raquo;</a>
-				</p>
-				<hr>
-				<h3>
-					Name: Ralph Renter
-				</h3>
-				<p>
-					Ralph rents a medium-sized apartment in NYC. He wants to see data relevant to him. He knows that his apartment is 1000 square feet.
-				</p>
-				<p>
-					He wants to print up his data and put it on his fridge.
-				</p>
-				<p>
-					<a href="#sc2">View Scenario &raquo;</a>
-				</p>
-			</div>
+		<div id="teaser">
 		</div>
 		<div class="row">
 			<div class="span14"><hr></div>
 		</div>
-		<div class="row" id="sc1">
-			<div class="span4">
-				<h4>
-					Scenario 1:
-				</h4>
-				<p>
-					Bobby owns a building in NYC. He wants to look up information about his building's heating and power usage.
-				</p>
-			</div>
-			<div class="span10">
-				<div class="scenario-table" data-scenario-csv="scenarios/bb1.csv"></div>
-			</div>
-			<div class="row">
-				<div class="span10 offset4 sc-pages-notes">
-					<h4>
-						Pages:
-					</h4>
-					<ul>
-						<li>
-							<p>
-								Home
-							</p>
-							<p class="notes">
-								Map in background.
-								<br>
-								Something prompting the user to "search for NYC address" shows up over the map
-							</p>
-						</li>
-						<li>
-							<p>
-								Search Results
-							</p>
-							<p class="notes">
-								Map in background.
-								<br>
-								If the address is found, it shows up on a list.
-								<br>
-								If there's a duplicate, then the options are presented in a list.
-								<br>
-								The user can select one address and click through to view.
-							</p>
-						</li>
-						<li>
-							<p>
-								Tax Lot Level Info
-							</p>
-							<p class="notes">
-								Map in background.
-								<br>
-								Info is presented to the user
-								<br>
-								User has the option to print
-							</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span10 offset4">
-					<h4>
-						Images:
-					</h4>
-					<div class="scenario-images" data-scenario-images="bb1.json"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<p class="span4 offset4"><a href="#top">Back to Top</a></p>
-		</div>
-		<div class="row">
-			<div class="span14"><hr></div>
-		</div>
-		<div class="row" id="sc2">
-			<div class="span4">
-				<h4>
-					Scenario 2:
-				</h4>
-				<p>
-					Ralph rents a medium-sized apartment in NYC. He wants to see data relevant to him. He knows that his apartment is 1000 square feet.
-				</p>
-				<p>
-					He wants to print up his data and put it on his fridge.
-				</p>
-			</div>
-			<div class="span10">
-				<div class="scenario-table" data-scenario-csv="scenarios/rr1.csv"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="span10 offset4 sc-pages-notes">
-				<h4>
-					Pages:
-				</h4>
-				<ul>
-					<li>
-						<p>
-							Home
-						</p>
-						<p class="notes">
-							Map in background.
-							<br>
-							Something prompting the user to "search for NYC address" shows up over the map
-						</p>
-					</li>
-					<li>
-						<p>
-							Search Results
-						</p>
-						<p class="notes">
-							Map in background.
-							<br>
-							If the address is found, it shows up on a list.
-							<br>
-							If there's a duplicate, then the options are presented in a list.
-							<br>
-							The user can select one address and click through to view.
-						</p>
-					</li>
-					<li>
-						<p>
-							Tax Lot Level Info
-						</p>
-						<p class="notes">
-							Map in background.
-							<br>
-							Info is presented to the user
-							<br>
-							User has the option to enter their square footage
-							<br>
-							User has the option to print
-						</p>
-					</li>
-					<li>
-						<p>
-							Square Footage Entry
-						</p>
-						<p class="notes">
-							Exactly like the "Tax Lot Level Info" page, except a the user is prompted to enter their address.
-						</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="span10 offset4">
-				<h4>
-					Images:
-				</h4>
-				<div class="scenario-images" data-scenario-images="rr1.json"></div>
-			</div>
-		</div>
-		<div class="row">
-			<p class="span4 offset4"><a href="#top">Back to Top</a></p>
+		<div id="scenarios">
 		</div>
     </div>
+	<script type="text/x-mustache-template" id="teaser-tmpl">
+	<div class="row">
+		<div class="span4">
+			<h3>
+				<small>Personas and Scenarios</small>
+			</h3>
+		</div>
+		<div class="span10">
+			{{#pages}}
+			<h3>
+				Name: {{name}}
+			</h3>
+			<p>
+				{{description}}
+			</p>
+			<p>
+				<a href="#{{scenario_id}}">View Scenario &raquo;</a>
+			</p>
+			<hr>
+			{{/pages}}
+		</div>
+	</div>
+	</script>
+	<script type="text/x-mustache-template" id="scenario-tmpl">
+	<div class="row" id="{{scenario_id}}">
+		<div class="span4">
+			<h4>
+				{{name}}
+			</h4>
+			<p>
+				{{description}}
+			</p>
+		</div>
+		<div class="span10">
+			<div class="scenario-table" data-scenario-csv="scenarios/{{scenario_id}}.csv"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span10 offset4 sc-pages-notes">
+			<h4>
+				Pages:
+			</h4>
+			<ul>
+			{{#pages}}
+				<li>
+					<p>
+					{{name}}
+					</p>
+					{{#notes}}
+					<p class="notes">
+						{{.}}
+					</p>
+					{{/notes}}
+				</li>
+			{{/pages}}
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span10 offset4">
+			<h4>
+				Images:
+			</h4>
+			<ul class="media-grid">
+				{{#images}}
+				<li>
+					<a href="{{file}}" target="_BLANK">
+						<img src="{{file}}" width="150" class="thumbnail">
+						<h5>
+							{{#page}}{{page}}{{/page}}
+							{{^page}}...{{/page}}
+						</h5>
+					</a>
+				</li>
+				{{/images}}
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<p class="span4 offset4"><a href="#top">Back to Top</a></p>
+	</div>
+	<div class="row">
+		<div class="span14"><hr></div>
+	</div>
+	</script>
 	<script src="pp.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>

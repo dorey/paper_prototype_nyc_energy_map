@@ -1,5 +1,34 @@
+var teaserMustacheTmpl, sceneMustacheTmpl;
+
+function scenarioTeaser(elem, pages) {
+    if(teaserMustacheTmpl===undefined) {
+        teaserMustacheTmpl = $('#teaser-tmpl').html();
+    }
+    var pageData = { pages: [] };
+    _.each(pages, function(val, key){
+        pageData.pages.push(_.extend({
+            scenario_id: key
+        }, val))
+    });
+    elem.append($.mustache(teaserMustacheTmpl, pageData));
+}
+
+function scenarioDetails(elem, scenario_id, scenario) {
+    if(sceneMustacheTmpl===undefined) {
+        sceneMustacheTmpl = $('#scenario-tmpl').html()
+    }
+    elem.append($.mustache(sceneMustacheTmpl, _.extend({
+            scenario_id: scenario_id
+        }, scenario)));
+}
 
 $(function(){
+    var teaser = $('div#teaser'),
+        scene = $('div#scenarios');
+    scenarioTeaser(teaser, pages);
+    _.each(pages, function(p, pid){
+        scenarioDetails(scene, pid, p);
+    });
     $('.scenario-table').each(function(){
         var $elem = $(this),
             scsv = $elem.data('scenarioCsv');
@@ -8,14 +37,6 @@ $(function(){
                 .appendTo($elem);
         });
     });
-    $('.scenario-images').each(function(){
-        var $elem = $(this),
-            scid = $elem.data('scenarioImages');
-        var sc = scs[scid];
-        buildScenarioImages(sc)
-            .appendTo($elem);
-    });
-//    $('body').text(JSON.stringify(scs));
 });
 
 var CSV = (function(){
@@ -65,9 +86,9 @@ function buildScenarioTable(csv) {
             values[ii]=val;
             var thisClass = classes[ii];
             $(dest[1])
-                .html(val)
                 .addClass(thisClass)
                 .addClass(repeat ? 'repeat' : 'no-repeat')
+                .html(val)
                 .appendTo(tr);
         });
         if(row.length!==0) tr.appendTo(dest[0]);
@@ -77,8 +98,10 @@ function buildScenarioTable(csv) {
         .append(tbody)
 }
 
-scs = {
-  "bb1.json": {
+var pages = {
+  "bb1": {
+    "name": "Bobby BuildingOwner",
+    "description": "Bobby owns a building in NYC. He wants to look up information about his building's heating and power usage.",
     "images": [
       {
         "page": "Home",
@@ -93,9 +116,37 @@ scs = {
         "page": "Tax Lot Level Info",
         "file": "imgs/f4.png"
       }
+    ],
+    "pages": [
+      {
+        "name": "Home",
+        "notes": [
+          "Map in background.",
+          "Something prompting the user to 'search for NYC address' shows up over the map"
+        ]
+      },
+      {
+        "name": "Search results",
+        "notes": [
+          "Map in background.",
+          "If the address is found, it shows up on a list.",
+          "If there's a duplicate, then the options are presented in a list.",
+          "The user can select one address and click through to view."
+        ]
+      },
+      {
+        "name": "Tax Lot Level Info",
+        "notes": [
+          "Map in background.",
+          "Info is presented to the user",
+          "User has the option to print"
+        ]
+      }
     ]
   },
-  "rr1.json": {
+  "rr1": {
+    "name": "Ralph Renter",
+    "description": "Ralph rents a medium-sized apartment in NYC. He wants to see data relevant to him. He knows that his apartment is 1000 square feet.\nHe wants to print up his data and put it on his fridge.",
     "images": [
       {
         "page": "Home",
@@ -121,35 +172,52 @@ scs = {
         "file": "imgs/f6.png"
       },
       {
-        "page": "Tax Lot Level Info",
+        "page": "Apartment Level Info",
         "file": "imgs/f7.png"
       },
       {
         "file": "imgs/f8.png"
       }
+    ],
+    "pages": [
+      {
+        "name": "Home",
+        "notes": [
+          "Map in background.",
+          "Something prompting the user to 'search for NYC address' shows up over the map"
+        ]
+      },
+      {
+        "name": "Search results",
+        "notes": [
+          "Map in background.",
+          "If the address is found, it shows up on a list.",
+          "If there's a duplicate, then the options are presented in a list.",
+          "The user can select one address and click through to view."
+        ]
+      },
+      {
+        "name": "Tax Lot Level Info",
+        "notes": [
+          "Map in background.",
+          "Info is presented to the user",
+          "User has the option to enter their square footage",
+          "User has the option to print"
+        ]
+      },
+      {
+        "name": "Square Footage Entry",
+        "notes": [
+          "Exactly like the 'Tax Lot Level Info' page, except a the user is prompted to enter their address."
+        ]
+      },
+      {
+        "name": "Apartment Level Info",
+        "notes": [
+          "Similar to the 'Tax Lot Level Info' except adds (or substitutes) personalized data based on user input.",
+          "User has the option to print"
+        ]
+      }
     ]
   }
 };
-
-function buildScenarioImages(sc) {
-    var ul = $('<ul />', {'class':'media-grid'});
-    
-    var a, img, li;
-    function scImage(data) {
-        a = $('<a />', {'href':data.file, 'target': '_BLANK'});
-        img = $('<img />', {'src': data.file})
-                .css({'width':150})
-                .addClass('thumbnail')
-                .appendTo(a);
-        $('<h5 />')
-            .html(data.page || '&hellip;')
-            .appendTo(a);
-        return $('<li />').html(a);
-    }
-    
-    _.each(sc.images, function(im, i){
-        scImage(im)
-            .appendTo(ul);
-    });
-    return ul;
-}
