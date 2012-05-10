@@ -1,8 +1,6 @@
-COMS W4170
-============
+NYC Energy Map- Paper Prototype
+===============================
 
-Assignment 1
-------------
+From October 2011
 
-* [View the demo](http://dorey.github.com/ald2175_hw1/)
-* [Download the zip](https://github.com/dorey/ald2175_hw1/zipball/master)
+* [View the Personas, Scenarios, and Paper Prototype](http://dorey.github.com/paper_prototype_nyc_energy_map/)
